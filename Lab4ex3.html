@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab4 – Exercise 1</title>
+</head>
+<body>
+    <h1>JavaScript Lab</h1>
+    <script>
+        var classRoster = ["Alice", "Tom", "Charlie", "Diana", "Evan"];
+        console.log("Class Roster as string: " + classRoster.toString());
+        console.log("Initial Class Roster: " + classRoster);
+        classRoster.push("Fiona", "Nancy");        
+        classRoster.shift();
+        console.log("Updated Class Roster: " + classRoster);
+        console.log("Total number of students: " + classRoster.length);
+        var classInfo = {
+            className: 'ENSF381: Full-Stack Web Development',
+            instructor: 'Dr. Smith',
+            students: classRoster,
+            details: {
+            semester: 'Winter',
+            year: 2025
+            }
+        };
+
+        classInfo.schedule = ['Monday', 'Wednesday', 'Friday'];
+        classInfo.instructor = 'Dr. Abdellatif'; // or 'Dr. Deb' depending on the section
+
+        console.log("Class Name: " + classInfo.className);
+        console.log("Instructor: " + classInfo.instructor);
+        console.log("Students: " + classInfo.students);
+        console.log("Semester: " + classInfo.details.semester);
+        console.log("Updated Class Info: ", classInfo);
+
+        const { className, students } = classInfo;
+        console.log("Class Name (Destructured): " + className);
+        console.log("Students (Destructured): " + students);
+
+        const { semester, year } = classInfo.details;
+        console.log("Semester (Destructured): " + semester);
+        console.log("Year (Destructured): " + year);
+
+        const [student1, student2, ...remainingStudents] = classRoster;
+        console.log("Student 1: " + student1);
+        console.log("Student 2: " + student2);
+        console.log("Remaining Students: " + remainingStudents);
+    </script>
+</body>
+</html>
